@@ -81,7 +81,7 @@ services:
       ETH_PRIVATE_KEY: ${RECORDING_ORACLE_PRIVATE_KEY}
       ETH_HTTP_SERVER: ${RPC}
       PORT: 3005
-    command: ["yarn", "start"]
+    command: ["deno cache src/server.ts src/storage.ts", "deno run --allow-net --allow-env src/server.ts"]
     ports:
       - 3005:3005
 
